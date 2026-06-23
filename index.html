@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周荣志 · Rongzhi Zhou · 建筑环境艺术设计</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Serif SC',serif;font-weight:400;color:#111;background:#fafafa;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+::selection{background:#111;color:#fff}
+
+/* ===== UTILITY ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+.section{padding:140px 0}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin-bottom:4px;font-weight:500}
+.section-label-cn{font-size:11px;letter-spacing:2px;color:#bbb;margin-bottom:12px;font-weight:400}
+.section-title{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;line-height:1.2;margin-bottom:8px;color:#111}
+.section-title-en{font-family:'Inter','Noto Serif SC',sans-serif;font-size:14px;font-weight:400;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.section-desc{font-size:15px;color:#666;max-width:520px;line-height:1.8}
+
+/* ===== BILINGUAL TEXT ===== */
+.cn{font-family:'Noto Serif SC',serif}
+.en{font-family:'Inter',sans-serif}
+.text-cn{font-size:16px;color:#333;line-height:1.9;margin-bottom:4px}
+.text-en{font-size:13px;color:#999;line-height:1.6;font-weight:400}
+
+/* ===== HEADER ===== */
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:20px 0;transition:all .4s ease}
+.header.scrolled{background:rgba(250,250,250,.97);padding:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+.header-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display','Noto Serif SC',serif;font-size:20px;font-weight:700;letter-spacing:-.5px}
+.logo .logo-cn{font-size:14px;color:#888;font-weight:400}
+.nav{display:flex;gap:32px}
+.nav a{font-size:12px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;color:#555;transition:color .3s;position:relative}
+.nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .4s}
+.nav a:hover{color:#111}
+.nav a:hover::after{width:100%}
+.nav a .nav-cn{display:block;font-family:'Noto Serif SC',serif;font-size:9px;letter-spacing:1px;color:#bbb;text-transform:none;text-align:center;margin-top:-2px}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px}
+.hero-content{max-width:900px}
+.hero-suptitle{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#999;margin-bottom:20px;font-weight:500}
+.hero-name-cn{font-family:'Noto Serif SC',serif;font-size:clamp(40px,7vw,80px);font-weight:700;line-height:1.15;letter-spacing:4px;margin-bottom:4px;color:#111}
+.hero-name-en{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,48px);font-weight:400;font-style:italic;line-height:1.2;color:#888;margin-bottom:32px}
+.hero-sub-cn{font-size:clamp(14px,1.6vw,18px);color:#444;max-width:640px;line-height:1.8;margin-bottom:4px}
+.hero-sub-en{font-size:clamp(12px,1.2vw,14px);color:#999;max-width:640px;line-height:1.7;font-weight:300;margin-bottom:40px}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#111;border-bottom:2px solid #111;padding-bottom:6px;transition:gap .3s}
+.hero-cta:hover{gap:20px}
+/* ===== HERO AVATAR ===== */
+.hero-inner{display:flex;align-items:center;gap:60px}
+.hero-avatar-wrapper{flex-shrink:0}
+.hero-avatar{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 24px rgba(0,0,0,.08);display:block;transition:transform .4s ease,box-shadow .4s ease}
+.hero-avatar:hover{transform:scale(1.02);box-shadow:0 8px 40px rgba(0,0,0,.12)}
+
+/* ===== PROJECT IMAGE GRIDS ===== */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.project-image{background:#e0e0e0;overflow:hidden;position:relative;margin-bottom:16px}
+.project-image-grid{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr 1fr;position:relative}
+.project-image-grid .grid-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px}
+.project-image-grid .grid-small{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid-3mix{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;position:relative}
+.project-image-grid-3mix .mix-left{grid-row:1/3;overflow:hidden;position:relative;border-radius:4px;min-height:280px}
+.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid-5{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr;position:relative}
+.project-image-grid-5 .grid-hero-5{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px}
+.project-image-grid-5 .grid-half{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid-6{display:grid;width:100%;gap:6px;grid-template-columns:2fr 1fr 1fr;position:relative}
+.project-image-grid-6 .g6-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:180px}
+.project-image-grid-6 .g6-left{grid-row:2/4;overflow:hidden;position:relative;border-radius:4px;min-height:260px}
+.project-image-grid-6 .g6-tr{grid-column:2;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
+.project-image-grid-6 .g6-tl{grid-column:3;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
+.project-image-grid-6 .g6-br{grid-column:2;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
+.project-image-grid-6 .g6-bl{grid-column:3;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
+.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img{width:100%;height:100%;object-fit:cover;display:block;transition:all .5s ease;filter:grayscale(100%)}
+.project-image-grid .grid-item img:hover,.project-image-grid-3mix .grid-item img:hover,.project-image-grid-5 .grid-item img:hover,.project-image-grid-6 .grid-item img:hover{filter:grayscale(0%)}
+.project-image-grid .grid-item img.color-click,.project-image-grid-3mix .grid-item img.color-click,.project-image-grid-5 .grid-item img.color-click,.project-image-grid-6 .grid-item img.color-click{filter:grayscale(0%)}
+.project-card:hover .project-image-grid .grid-item img,.project-card:hover .project-image-grid-3mix .grid-item img,.project-card:hover .project-image-grid-5 .grid-item img,.project-card:hover .project-image-grid-6 .grid-item img{transform:scale(1.05)}
+.project-card:hover .project-image-grid .grid-item img.color-click,.project-card:hover .project-image-grid-3mix .grid-item img.color-click,.project-card:hover .project-image-grid-5 .grid-item img.color-click,.project-card:hover .project-image-grid-6 .grid-item img.color-click{transform:scale(1.05)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:60px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+
+/* ===== CONTACT ===== */
+.contact-section{padding:140px 0;background:#111;color:#eee}
+.contact-section .section-label{color:#888!important}
+.contact-section .section-label-cn{color:#666!important}
+.contact-section .section-title{color:#eee}
+.contact-section .section-title-en{color:#666}
+.contact-section .section-desc{color:#999!important}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-item{padding-bottom:24px;border-bottom:1px solid #222}
+.contact-item-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:2px}
+.contact-item-label-cn{font-family:'Noto Serif SC',serif;font-size:10px;color:#555;margin-bottom:8px}
+.contact-item-value-cn{font-family:'Noto Serif SC',serif;font-size:16px;color:#ddd;margin-bottom:2px}
+.contact-item-value-en{font-size:13px;color:#888}
+.contact-item-value-en a{color:#aaa;text-decoration:underline;text-underline-offset:3px}
+.contact-item-value-en a:hover{color:#fff}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-input{flex:1;background:transparent;border:1px solid #333;padding:14px 18px;font-family:'Inter',sans-serif;font-size:13px;color:#eee;outline:none;transition:border-color .3s}
+.form-input:focus{border-color:#888}
+.form-input::placeholder{color:#555}
+.textarea{resize:vertical;min-height:120px}
+.form-btn{display:inline-flex;align-items:center;justify-content:space-between;background:transparent;border:1px solid #555;padding:14px 24px;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#eee;cursor:pointer;transition:all .3s;margin-top:4px}
+.form-btn:hover{background:#eee;color:#111;border-color:#eee}
+.form-btn-cn{font-family:'Noto Serif SC',serif;margin-right:12px}
+/* ===== FOOTER ===== */
+.footer{padding:40px 0;background:#0d0d0d;color:#555;font-size:12px}
+.footer-copy{color:#444}
+.footer-copy-cn{font-family:'Noto Serif SC',serif;margin-right:8px}
+.footer-social{display:flex;gap:20px}
+.footer-social a{font-size:11px;color:#555;letter-spacing:.5px;transition:color .3s}
+.footer-social a:hover{color:#aaa}
+
+@media(max-width:768px){
+.projects-grid{grid-template-columns:1fr;gap:32px}
+.project-image{height:auto;overflow:visible}
+.project-image-grid,.project-image-grid-3mix,.project-image-grid-5,.project-image-grid-6{display:flex;flex-direction:column;gap:8px;width:100%}
+.project-image-grid .grid-hero,.project-image-grid .grid-small,.project-image-grid-3mix .mix-left,.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom,.project-image-grid-5 .grid-hero-5,.project-image-grid-5 .grid-half,.project-image-grid-6 .g6-hero,.project-image-grid-6 .g6-left,.project-image-grid-6 .g6-tr,.project-image-grid-6 .g6-tl,.project-image-grid-6 .g6-br,.project-image-grid-6 .g6-bl{width:100%;min-height:180px}
+.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img{height:100%;width:100%;object-fit:cover}
+.hero-inner{flex-direction:column;align-items:center;text-align:center}
+.hero-avatar{width:120px;height:120px}
+.container{padding:0 20px}
+.header{padding:12px 0}
+.header.scrolled{padding:8px 0}
+.logo{font-size:16px}
+.logo .logo-cn{font-size:11px}
+.nav{gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:10px;letter-spacing:.4px}
+.nav a .nav-cn{font-size:8px}
+.hero{min-height:auto;padding:100px 0 60px}
+.hero-name-cn{font-size:clamp(28px,8vw,36px);letter-spacing:2px}
+.hero-name-en{font-size:clamp(18px,5vw,24px)}
+.hero-sub-cn{font-size:14px}
+.hero-sub-en{font-size:12px}
+.hero-inner{gap:24px}
+.section{padding:60px 0}
+.section-title{font-size:clamp(22px,6vw,28px)}
+.contact-grid{grid-template-columns:1fr;gap:40px}
+.form-row{flex-direction:column;gap:12px}
+.about-grid{grid-template-columns:1fr;gap:40px}
+.services-grid{grid-template-columns:1fr;gap:32px}
+.footer-inner{flex-direction:column;gap:12px;text-align:center}
+.scroll-indicator{display:none}
+.contact-info{gap:20px}
+}
+@media(max-width:480px){
+.hero-avatar{width:100px;height:100px}
+.hero-name-cn{font-size:24px}
+.hero-name-en{font-size:16px}
+.logo{font-size:14px}
+.logo .logo-cn{font-size:10px}
+.nav a{font-size:9px;letter-spacing:.2px}
+.nav{gap:6px}
+.section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">周荣志<span class="logo-cn">· 建筑环境艺术设计</span></a>
+    <nav class="nav">
+      <a href="#home"><span class="nav-en">Home</span><span class="nav-cn">首页</span></a>
+      <a href="#about"><span class="nav-en">About</span><span class="nav-cn">关于</span></a>
+      <a href="#projects"><span class="nav-en">Projects</span><span class="nav-cn">作品</span></a>
+      <a href="#services"><span class="nav-en">Services</span><span class="nav-cn">服务</span></a>
+      <a href="#contact"><span class="nav-en">Contact</span><span class="nav-cn">联系</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-avatar-wrapper">
+        <img class="hero-avatar" src="images/portrait.jpg.jpg" alt="周荣志 · Rongzhi Zhou">
+      </div>
+      <div class="hero-content">
+        <p class="hero-suptitle">建筑环境艺术设计师 · 江苏南通</p>
+        <h1 class="hero-name-cn">空间 · 即语言</h1>
+        <h1 class="hero-name-en">Space · as narrative</h1>
+        <p class="hero-sub-cn">专注于企事业办公展示空间、特色餐饮休闲空间与艺术住宅设计，<br>以环境为媒介，构筑人与空间的情感联结。</p>
+        <p class="hero-sub-en">Specializing in corporate office & exhibition spaces, distinctive dining & leisure environments, and art residences — crafting emotional connections between people and place.</p>
+        <a href="#projects" class="hero-cta">
+          <span>浏览作品</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-cn">向下滚动</span>
+      <span class="scroll-en">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/about.jpg.png" alt="周荣志 · 建筑环境艺术设计" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="about-text reveal">
+        <p class="section-label">About</p>
+        <p class="section-label-cn">关于我</p>
+        <h2 class="section-title">以空间叙事，<br>以环境共鸣</h2>
+        <p class="section-title-en">Narrative through space, resonance through environment</p>
+        <p class="highlight-cn">设计不是装饰，而是对空间的深刻理解与再创造。</p>
+        <p class="highlight-en">Design is not decoration — it is a deep understanding and re-creation of space.</p>
+        <p class="text-cn">从建筑到室内，从氛围到细节，我致力于挖掘每个场域的独特气质，在理性与感性之间找到平衡。</p>
+        <p class="text-en">From architecture to interiors, from atmosphere to detail, I strive to uncover the unique character of each site — finding balance between reason and emotion.</p>
+        <p class="text-cn">让空间成为讲述故事的媒介，让使用者成为故事的主角。</p>
+        <p class="text-en">Turning space into a medium of storytelling, and the user into its protagonist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="projects-header reveal">
+      <div>
+        <p class="section-label">Projects</p>
+        <p class="section-label-cn">精选作品</p>
+        <h2 class="section-title">探索空间的可能性</h2>
+        <p class="section-title-en">Exploring the possibilities of space</p>
+      </div>
+      <p class="section-desc">每一个项目都是一次关于空间与体验的探索。</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+                <div class="project-image">
+          <div class="project-image-grid">
+            <div class="grid-item grid-hero">
+              <img src="images/project-zb-1.jpg.png" alt="中邦集团办公空间 - 主图" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/project-zb-2.jpg.png" alt="中邦集团办公空间 - 2" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/project-zb-3.jpg.png" alt="中邦集团办公空间 - 3" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/project-zb-4.jpg.png" alt="中邦集团办公空间 - 4" loading="lazy">
+            </div>
+
+          </div>
+        </div>
+        <p class="project-category">Corporate Office</p>
+        <p class="project-category-cn">企事业办公</p>
+        <h3 class="project-title-cn">中邦集团 中邦纺织科技有限公司办公空间设计</h3>
+        <p class="project-title-en">Jiangsu Zhongbang Group Office Space Design</p>
+        <p class="project-desc-cn">南通 · 3000m2</p>
+        <p class="project-desc">2025</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <div class="project-image-grid-3mix">
+            <div class="grid-item mix-left">
+              <img src="images/teahouse-1.jpg.png.png" alt="山隐茶空间 - 主图" loading="lazy">
+            </div>
+            <div class="grid-item mix-right-top">
+              <img src="images/teahouse-2.jpg.png.png" alt="山隐茶空间 - 2" loading="lazy">
+            </div>
+            <div class="grid-item mix-right-bottom">
+              <img src="images/teahouse-3.jpg.png.png" alt="山隐茶空间 - 3" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <p class="project-category">Dining & Leisure</p>
+        <p class="project-category-cn">餐饮休闲</p>
+        <h3 class="project-title-cn">山隐 · 茶空间</h3>
+        <p class="project-title-en">Mountain Retreat Tea House</p>
+        <p class="project-desc-cn">浙江 · 300m2</p>
+        <p class="project-desc">2025</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <div class="project-image-grid-5">
+            <div class="grid-item grid-hero-5">
+              <img src="images/residence-1.png.png" alt="私人住宅 - 主图" loading="lazy">
+            </div>
+            <div class="grid-item grid-half">
+              <img src="images/residence-2.png.png" alt="私人住宅 - 2" loading="lazy">
+            </div>
+            <div class="grid-item grid-half">
+              <img src="images/residence-3.png.png" alt="私人住宅 - 3" loading="lazy">
+            </div>
+            <div class="grid-item grid-half">
+              <img src="images/residence-4.png.png" alt="私人住宅 - 4" loading="lazy">
+            </div>
+            <div class="grid-item grid-half">
+              <img src="images/residence-5.png.png" alt="私人住宅 - 5" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <p class="project-category">Residence</p>
+        <p class="project-category-cn">住宅设计</p>
+        <h3 class="project-title-cn">极简·自然——私人住宅</h3>
+        <p class="project-title-en">Minimalist Nature Private Residence</p>
+        <p class="project-desc-cn">浙江 · 530m2</p>
+        <p class="project-desc">2025</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <div class="project-image-grid-6">
+            <div class="grid-item g6-hero"><img src="images/culture-1.png" alt="社区艺术中心 - 主图" loading="lazy"></div>
+            <div class="grid-item g6-left"><img src="images/culture-2.png" alt="社区艺术中心 - 竖图" loading="lazy"></div>
+            <div class="grid-item g6-tr"><img src="images/culture-3.png" alt="社区艺术中心 - 3" loading="lazy"></div>
+            <div class="grid-item g6-tl"><img src="images/culture-4.png" alt="社区艺术中心 - 4" loading="lazy"></div>
+            <div class="grid-item g6-br"><img src="images/culture-5.png" alt="社区艺术中心 - 5" loading="lazy"></div>
+            <div class="grid-item g6-bl"><img src="images/culture-6.png" alt="社区艺术中心 - 6" loading="lazy"></div>
+          </div>
+        </div>
+        <p class="project-category">Cultural Space</p>
+        <p class="project-category-cn">文化空间</p>
+        <h3 class="project-title-cn">光与影——社区艺术中心</h3>
+        <p class="project-title-en">Light & Shadow Community Art Center</p>
+        <p class="project-desc-cn">江苏 · 800㎡</p>
+        <p class="project-desc">2023</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <p class="section-label">Services</p>
+      <p class="section-label-cn">服务范围</p>
+      <h2 class="section-title">全流程空间设计服务</h2>
+      <p class="section-title-en">Full-cycle spatial design services</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <p class="service-number">01</p>
+        <h3 class="service-title-cn">空间规划与室内设计</h3>
+        <p class="service-title-en">Space Planning & Interior Design</p>
+        <p class="service-text-cn">从功能布局、动线规划到材质与灯光设计，打造兼具美学与实用性的空间方案。</p>
+        <p class="service-text-en">From functional layout and circulation planning to material selection and lighting design — crafting solutions that balance aesthetics with practicality.</p>
+      </div>
+      <div class="service-item reveal">
+        <p class="service-number">02</p>
+        <h3 class="service-title-cn">企业办公与商业空间设计</h3>
+        <p class="service-title-en">Corporate & Commercial Design</p>
+        <p class="service-text-cn">聚焦品牌表达与空间效率，为企业打造激发创造力与凝聚力的工作环境。</p>
+        <p class="service-text-en">Focusing on brand expression and spatial efficiency to create work environments that inspire creativity and collaboration.</p>
+      </div>
+      <div class="service-item reveal">
+        <p class="service-number">03</p>
+        <h3 class="service-title-cn">餐饮休闲空间设计</h3>
+        <p class="service-title-en">Dining & Leisure Design</p>
+        <p class="service-text-cn">通过氛围营造与体验设计，让就餐与休闲空间成为城市生活中的情感驿站。</p>
+        <p class="service-text-en">Through atmosphere creation and experience design, transforming dining and leisure spaces into emotional havens in urban life.</p>
+      </div>
+      <div class="service-item reveal">
+        <p class="service-number">04</p>
+        <h3 class="service-title-cn">设计与施工管理</h3>
+        <p class="service-title-en">Design Development & Construction Management</p>
+        <p class="service-text-cn">从深化设计到施工现场管理，把控每个环节，确保设计理念精准落地，实现空间的完整交付。</p>
+        <p class="service-text-en">From design development to construction management — controlling every detail to ensure each vision is precisely executed for complete spatial delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label" style="color:#555">Contact</p>
+      <p class="section-label-cn" style="color:#666">联系方式</p>
+      <h2 class="section-title">让空间开始对话</h2>
+      <p class="section-title-en">Let the space begin to speak</p>
+      <p class="section-desc">有项目想聊聊？期待与您一起探索空间的可能性。</p>
+      <p class="section-desc" style="color:#777;margin-top:2px">Have a project in mind? Let's explore the possibilities of space together.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <p class="contact-item-label">Email</p>
+          <p class="contact-item-label-cn">邮箱</p>
+          <p class="contact-item-value-cn">13914370995@139.com</p>
+          <p class="contact-item-value-en"><a href="mailto:13914370995@139.com">13914370995@139.com</a></p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-item-label">Location</p>
+          <p class="contact-item-label-cn">坐标</p>
+          <p class="contact-item-value-cn">中国 · 江苏南通</p>
+          <p class="contact-item-value-en">Nantong, Jiangsu, China</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-item-label">Social</p>
+          <p class="contact-item-label-cn">社交</p>
+          <p class="contact-item-value-en">
+            <a href="#">微信公众号</a> ·
+            <a href="#">小红书</a> ·
+            <a href="#">Behance</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-item-label">Availability</p>
+          <p class="contact-item-label-cn">档期</p>
+          <p class="contact-item-value-cn">项目合作与AI设计咨询，欢迎联系</p>
+          <p class="contact-item-value-en">Open for commissions & AI design consulting</p>
+        </div>
+      </div>
+      <form class="contact-form reveal" action="https://formsubmit.co/13914370995@139.com" method="POST" onsubmit="var btn=this.querySelector(&#39;.form-btn span&#39;);btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送中...</span>Sending...&#39;;setTimeout(function(){btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送消息</span>Send message&#39;},8000)">
+        <div class="form-row">
+          <input class="form-input" type="text" name="name" placeholder="您的姓名 / Your name" required>
+          <input class="form-input" type="email" name="email" placeholder="邮箱 / Email" required>
+        </div>
+        <input class="form-input" type="text" name="project" placeholder="项目类型 / Project type">
+        <textarea class="form-input textarea" name="message" placeholder="简单描述您的需求 / Tell me about your project..." rows="4"></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <button class="form-btn" type="submit">
+          <span><span class="form-btn-cn">发送消息</span>Send message</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h10M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-copy"><span class="footer-copy-cn">? 2026 周荣志 · 保留所有权利</span> / ? 2026 Rongzhi Zhou · All rights reserved</span>
+    <div class="footer-social">
+      <a href="#">微信</a>
+      <a href="#">小红书</a>
+      <a href="#">Behance</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== HEADER SCROLL EFFECT =====
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ===== SCROLL REVEAL (Intersection Observer) =====
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => observer.observe(el));
+
+// ===== SMOOTH OFFSET FOR FIXED HEADER =====
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      const offset = header.offsetHeight + 16;
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
+
+<script>
+document.querySelectorAll('.project-image-grid .grid-item img, .project-image-grid-3mix .grid-item img, .project-image-grid-5 .grid-item img, .project-image-grid-6 .grid-item img').forEach(img => {
+  img.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.classList.toggle('color-click');
+  });
+});
+</script>
+</body>
+</html>
