@@ -60,6 +60,20 @@ a{text-decoration:none;color:inherit}
 .hero-avatar{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 24px rgba(0,0,0,.08);display:block;transition:transform .4s ease,box-shadow .4s ease}
 .hero-avatar:hover{transform:scale(1.02);box-shadow:0 8px 40px rgba(0,0,0,.12)}
 
+/* ===== STATS ROW ===== */
+.stats-row{display:flex;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.06)}
+.stat-item{display:flex;flex-direction:column;gap:2px}
+.stat-number{font-size:28px;font-weight:700;color:rgba(102,102,102,0.85);line-height:1.1;letter-spacing:-.5px}
+.stat-label{font-size:11px;color:rgba(102,102,102,0.85);font-weight:500}
+.stat-label-en{font-size:9px;color:rgba(153,153,153,0.75);text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:768px){.stats-row{flex-wrap:wrap;gap:20px;margin-top:24px;padding-top:20px}}
+
+/* ===== INSIGHT ===== */
+.insight-inner{max-width:720px;margin:0 auto;text-align:center;padding:20px 0}
+.insight-quote{margin:0;padding:0;border:none}
+.insight-text-cn{font-family:'Noto Serif SC',serif;font-size:16px;color:rgba(68,68,68,0.8);line-height:1.8;margin-bottom:16px;font-style:italic}
+.insight-text-en{font-size:12px;color:rgba(153,153,153,0.75);line-height:1.6;font-style:italic}
+@media(max-width:768px){.insight-text-cn{font-size:14px;line-height:1.7}}
 /* ===== PROJECT IMAGE GRIDS ===== */
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
 .project-image{background:#e0e0e0;overflow:hidden;position:relative;margin-bottom:16px}
@@ -90,11 +104,11 @@ a{text-decoration:none;color:inherit}
 .project-title-en{font-size:12px;color:rgba(153,153,153,.75);font-weight:400;margin-bottom:8px}
 .project-desc-cn{font-family:'Noto Serif SC',serif;font-size:13px;color:rgba(102,102,102,.75);margin-bottom:2px}
 .project-desc{font-size:11px;color:rgba(153,153,153,.75);letter-spacing:.5px}
-.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img,.project-image-grid-8 img{width:100%;height:100%;object-fit:cover;display:block;transition:all .5s ease;filter:grayscale(100%)}
-.project-image-grid .grid-item img:hover,.project-image-grid-3mix .grid-item img:hover,.project-image-grid-5 .grid-item img:hover,.project-image-grid-6 .grid-item img,.project-image-grid-8 img:hover{filter:grayscale(0%)}
-.project-image-grid .grid-item img.color-click,.project-image-grid-3mix .grid-item img.color-click,.project-image-grid-5 .grid-item img.color-click,.project-image-grid-6 .grid-item img,.project-image-grid-8 img.color-click{filter:grayscale(0%)}
-.project-card:hover .project-image-grid .grid-item img,.project-card:hover .project-image-grid-3mix .grid-item img,.project-card:hover .project-image-grid-5 .grid-item img,.project-card:hover .project-image-grid-6 .grid-item img,.project-image-grid-8 img{transform:scale(1.05)}
-.project-card:hover .project-image-grid .grid-item img.color-click,.project-card:hover .project-image-grid-3mix .grid-item img.color-click,.project-card:hover .project-image-grid-5 .grid-item img.color-click,.project-card:hover .project-image-grid-6 .grid-item img,.project-image-grid-8 img.color-click{transform:scale(1.05)}
+.project-image-grid .grid-item img,.project-image-grid-3mix img,.project-image-grid-5 img,.project-image-grid-6 img,.project-image-grid-8 img{width:100%;height:100%;object-fit:cover;display:block;transition:all .5s ease;filter:grayscale(100%)}
+.project-image-grid .grid-item img:hover,.project-image-grid-3mix img:hover,.project-image-grid-5 img:hover,.project-image-grid-6 img:hover,.project-image-grid-8 img:hover{filter:grayscale(0%)}
+.project-image-grid .grid-item img.color-click,.project-image-grid-3mix img.color-click,.project-image-grid-5 img.color-click,.project-image-grid-6 img.color-click,.project-image-grid-8 img.color-click{filter:grayscale(0%)}
+.project-card:hover .project-image-grid .grid-item img,.project-card:hover .project-image-grid-3mix img,.project-card:hover .project-image-grid-5 img,.project-card:hover .project-image-grid-6 img,.project-image-grid-8 img{transform:scale(1.05)}
+.project-card:hover .project-image-grid .grid-item img.color-click,.project-card:hover .project-image-grid-3mix img.color-click,.project-card:hover .project-image-grid-5 img.color-click,.project-image-grid-6 img.color-click,.project-image-grid-8 img.color-click{transform:scale(1.05)}
 
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -103,6 +117,14 @@ a{text-decoration:none;color:inherit}
 
 
 
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out;backdrop-filter:blur(8px)}
+.lightbox-overlay.show{opacity:1;visibility:visible}
+.lightbox-overlay img{max-width:90%;max-height:90%;object-fit:contain;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5);transform:scale(0.9);transition:transform .3s ease}
+.lightbox-overlay.show img{transform:scale(1)}
+.lightbox-overlay .lightbox-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border:none;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:10000}
+.lightbox-overlay .lightbox-close:hover{background:rgba(255,255,255,.25)}
+@media(max-width:768px){.lightbox-overlay img{max-width:95%;max-height:80%}}
 /* ===== FORM TOAST ===== */
 .form-toast{position:absolute;bottom:0;left:0;right:0;background:rgba(17,17,17,.45);color:#fff;padding:18px 24px;border-radius:0 0 4px 4px;font-size:14px;font-weight:500;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:10;text-align:center;backdrop-filter:blur(4px)}
 .form-toast.show{opacity:1}
@@ -133,6 +155,15 @@ a{text-decoration:none;color:inherit}
 .form-btn{display:inline-flex;align-items:center;justify-content:space-between;background:transparent;border:1px solid #555;padding:14px 24px;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#eee;cursor:pointer;transition:all .3s;margin-top:4px}
 .form-btn:hover{background:#eee;color:#111;border-color:#eee}
 .form-btn-cn{font-family:'Noto Serif SC',serif;margin-right:12px}
+/* ===== BACK TO TOP ===== */
+.back-to-top{position:fixed;bottom:40px;right:40px;width:44px;height:44px;border-radius:50%;background:#111;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .4s ease;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{background:#333;transform:translateY(-3px)}
+.back-to-top svg{width:18px;height:18px}
+@media(max-width:768px){.back-to-top{bottom:20px;right:20px;width:38px;height:38px}}
+/* ===== IMAGE FADE-IN ===== */
+.project-image img,.project-image-grid img,.project-image-grid-3mix img,.project-image-grid-5 img,.project-image-grid-6 img,.project-image-grid-8 img{animation:imgFadeIn .6s ease forwards}
+@keyframes imgFadeIn{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:scale(1)}}
 /* ===== FOOTER ===== */
 .footer{padding:40px 0;background:#0d0d0d;color:#555;font-size:12px}
 .footer-copy{color:#444}
@@ -148,7 +179,7 @@ a{text-decoration:none;color:inherit}
 .project-image-grid,.project-image-grid-3mix,.project-image-grid-5,.project-image-grid-6,.project-image-grid-8{display:flex;flex-direction:column;gap:8px;width:100%}
 .project-image-grid .grid-hero,.project-image-grid-3mix .mix-left,.project-image-grid-5 .grid-hero-5,.project-image-grid-6 .g6-hero,.project-image-grid-6 .g6-left{width:100%;aspect-ratio:16/9;min-height:200px}
 .project-image-grid .grid-small,.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom,.project-image-grid-5 .grid-half,.project-image-grid-6 .g6-tr,.project-image-grid-6 .g6-tl,.project-image-grid-6 .g6-br,.project-image-grid-6 .g6-bl{width:100%;aspect-ratio:16/10;min-height:160px}.project-image-grid-8 .g8-wide,.project-image-grid-8 .g8-item{width:100%}
-.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img,.project-image-grid-8 img{height:100%;width:100%;object-fit:cover}
+.project-image-grid .grid-item img,.project-image-grid-3mix img,.project-image-grid-5 img,.project-image-grid-6 img,.project-image-grid-8 img{height:100%;width:100%;object-fit:cover}
 .hero-inner{flex-direction:column;align-items:center;text-align:center}
 .hero-avatar{width:120px;height:120px}
 .container{padding:0 20px}
@@ -197,6 +228,7 @@ a{text-decoration:none;color:inherit}
       <a href="#home"><span class="nav-en">Home</span><span class="nav-cn">首页</span></a>
       <a href="#about"><span class="nav-en">About</span><span class="nav-cn">关于</span></a>
       <a href="#projects"><span class="nav-en">Projects</span><span class="nav-cn">作品</span></a>
+      <a href="#insight"><span class="nav-en">Insight</span><span class="nav-cn">观点</span></a>
       <a href="#services"><span class="nav-en">Services</span><span class="nav-cn">服务</span></a>
       <a href="#contact"><span class="nav-en">Contact</span><span class="nav-cn">联系</span></a>
     </nav>
@@ -248,11 +280,41 @@ a{text-decoration:none;color:inherit}
         <p class="text-en">From architecture to interiors, from atmosphere to detail, I strive to uncover the unique character of each site — finding balance between reason and emotion.</p>
         <p class="text-cn">让空间成为讲述故事的媒介，让使用者成为故事的主角。</p>
         <p class="text-en">Turning space into a medium of storytelling, and the user into its protagonist.</p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">年从业经验</span>
+            <span class="stat-label-en">Years of experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">落地项目</span>
+            <span class="stat-label-en">Projects delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10万+</span>
+            <span class="stat-label">m²服务总面积</span>
+            <span class="stat-label-en">Total area designed</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== INSIGHT ===== -->
+<section class="section" id="insight">
+  <div class="container">
+    <div class="insight-inner reveal">
+      <p class="section-label">Insight</p>
+      <p class="section-label-cn">设计观点</p>
+      <blockquote class="insight-quote">
+        <p class="insight-text-cn">设计的起点不是图纸，而是对项目目标的深刻理解。从前期需求梳理、方案比选到投资概算，我们帮助客户在动笔之前就看清方向——让每一分投入都落在关键处。</p>
+        <p class="insight-text-en">Design begins not with drawings, but with a clear understanding of project goals. From requirement analysis and scheme comparison to investment estimation, we help clients see the path before a single line is drawn — ensuring every investment lands where it matters.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
 <!-- ===== PROJECTS ===== -->
 <section class="section" id="projects">
   <div class="container">
@@ -425,41 +487,27 @@ a{text-decoration:none;color:inherit}
     <div class="services-grid">
       <div class="service-item reveal">
         <p class="service-number">01</p>
-        <h3 class="service-title-cn">空间规划与室内设计</h3>
-        <p class="service-title-en">Space Planning & Interior Design</p>
-        <p class="service-text-cn">从功能布局、动线规划到材质与灯光设计，打造兼具美学与实用性的空间方案。</p>
-        <p class="service-text-en">From functional layout and circulation planning to material selection and lighting design — crafting solutions that balance aesthetics with practicality.</p>
+        <h3 class="service-title-cn">空间规划与全案设计</h3>
+        <p class="service-title-en">Comprehensive Spatial Design</p>
+        <p class="service-text-cn">涵盖居住空间、企业办公与商业空间、餐饮休闲等多元场景，从功能布局、动线规划到材质与灯光设计，打造兼具美学与实用性的空间方案。</p>
+        <p class="service-text-en">Covering residential, corporate, commercial, dining and leisure spaces — from functional layout and circulation planning to material and lighting design, crafting solutions that balance aesthetics with practicality.</p>
       </div>
       <div class="service-item reveal">
         <p class="service-number">02</p>
-        <h3 class="service-title-cn">企业办公与商业空间设计</h3>
-        <p class="service-title-en">Corporate & Commercial Design</p>
-        <p class="service-text-cn">聚焦品牌表达与空间效率，为企业打造激发创造力与凝聚力的工作环境。</p>
-        <p class="service-text-en">Focusing on brand expression and spatial efficiency to create work environments that inspire creativity and collaboration.</p>
-      </div>
-      <div class="service-item reveal">
-        <p class="service-number">03</p>
-        <h3 class="service-title-cn">餐饮休闲空间设计</h3>
-        <p class="service-title-en">Dining & Leisure Design</p>
-        <p class="service-text-cn">通过氛围营造与体验设计，让就餐与休闲空间成为城市生活中的情感驿站。</p>
-        <p class="service-text-en">Through atmosphere creation and experience design, transforming dining and leisure spaces into emotional havens in urban life.</p>
-      </div>
-      <div class="service-item reveal">
-        <p class="service-number">04</p>
         <h3 class="service-title-cn">设计与施工管理</h3>
         <p class="service-title-en">Design Development & Construction Management</p>
         <p class="service-text-cn">从深化设计到施工现场管理，把控每个环节，确保设计理念精准落地，实现空间的完整交付。</p>
         <p class="service-text-en">From design development to construction management — controlling every detail to ensure each vision is precisely executed for complete spatial delivery.</p>
       </div>
       <div class="service-item reveal">
-        <p class="service-number">05</p>
+        <p class="service-number">03</p>
         <h3 class="service-title-cn">AI设计</h3>
         <p class="service-title-en">AI Design</p>
         <p class="service-text-cn">AI辅助空间概念生成、方案深化与可视化呈现，以智能驱动提升设计效率与创意边界。</p>
         <p class="service-text-en">AI-assisted concept generation, design development, and visualization — intelligently elevating design efficiency and creative boundaries.</p>
       </div>
       <div class="service-item reveal">
-        <p class="service-number">06</p>
+        <p class="service-number">04</p>
         <h3 class="service-title-cn">艺术品咨询及代购</h3>
         <p class="service-title-en">Art Consulting & Sourcing</p>
         <p class="service-text-cn">提供艺术品选配、定制咨询及代购服务，为空间注入独特的艺术气息与收藏价值。</p>
@@ -473,14 +521,7 @@ a{text-decoration:none;color:inherit}
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="reveal">
-      <p class="section-label" style="color:#555">Contact</p>
-      <p class="section-label-cn" style="color:#666">联系方式</p>
-      <h2 class="section-title">让空间开始对话</h2>
-      <p class="section-title-en">Let the space begin to speak</p>
-      <p class="section-desc">有项目想聊聊？期待与您一起探索空间的可能性。</p>
-      <p class="section-desc" style="color:#777;margin-top:2px">Have a project in mind? Let's explore the possibilities of space together.</p>
-    </div>
-    <div class="contact-grid">
+      <div class="contact-grid">
       <div class="contact-info reveal">
         <div class="contact-item">
           <p class="contact-item-label">Email</p>
@@ -566,6 +607,21 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
+// ===== BACK TO TOP BUTTON =====
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
 // ===== SMOOTH OFFSET FOR FIXED HEADER =====
 document.querySelectorAll('.nav a').forEach(link => {
   link.addEventListener('click', e => {
@@ -583,13 +639,44 @@ document.querySelectorAll('.nav a').forEach(link => {
 </script>
 
 
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script>
-document.querySelectorAll('.project-image-grid .grid-item img, .project-image-grid-3mix .grid-item img, .project-image-grid-5 .grid-item img, .project-image-grid-6 .grid-item img,.project-image-grid-8 img').forEach(img => {
-  img.addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.classList.toggle('color-click');
+// ===== IMAGE LIGHTBOX =====
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
+  if(!lightbox || !lightboxImg) return;
+  document.querySelectorAll('.project-image-grid img, .project-image-grid-3mix img, .project-image-grid-5 img, .project-image-grid-6 img, .project-image-grid-8 img').forEach(function(img){
+    img.addEventListener('click', function(e){
+      e.stopPropagation();
+      this.classList.toggle('color-click');
+      lightboxImg.src = this.src;
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
-</script>
+  function closeLightbox(){
+    lightbox.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  if(lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox || e.target === lightboxImg) closeLightbox();
+  });
+  lightboxImg.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
+  });
+})();
+</script><!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 </body>
 </html>
