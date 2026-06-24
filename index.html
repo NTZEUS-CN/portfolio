@@ -64,32 +64,51 @@ a{text-decoration:none;color:inherit}
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
 .project-image{background:#e0e0e0;overflow:hidden;position:relative;margin-bottom:16px}
 .project-image-grid{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr 1fr;position:relative}
-.project-image-grid .grid-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px}
-.project-image-grid .grid-small{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid .grid-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px;aspect-ratio:16/9}
+.project-image-grid .grid-small{overflow:hidden;position:relative;border-radius:4px;min-height:130px;aspect-ratio:4/3}
 .project-image-grid-3mix{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;position:relative}
-.project-image-grid-3mix .mix-left{grid-row:1/3;overflow:hidden;position:relative;border-radius:4px;min-height:280px}
-.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid-3mix .mix-left{grid-row:1/3;overflow:hidden;position:relative;border-radius:4px;min-height:280px;aspect-ratio:3/4}
+.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom{overflow:hidden;position:relative;border-radius:4px;min-height:130px;aspect-ratio:16/9}
 .project-image-grid-5{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr;position:relative}
-.project-image-grid-5 .grid-hero-5{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px}
-.project-image-grid-5 .grid-half{overflow:hidden;position:relative;border-radius:4px;min-height:130px}
+.project-image-grid-5 .grid-hero-5{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px;aspect-ratio:16/9}
+.project-image-grid-5 .grid-half{overflow:hidden;position:relative;border-radius:4px;min-height:130px;aspect-ratio:4/3}
 .project-image-grid-6{display:grid;width:100%;gap:6px;grid-template-columns:2fr 1fr 1fr;position:relative}
-.project-image-grid-6 .g6-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:180px}
-.project-image-grid-6 .g6-left{grid-row:2/4;overflow:hidden;position:relative;border-radius:4px;min-height:260px}
-.project-image-grid-6 .g6-tr{grid-column:2;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
-.project-image-grid-6 .g6-tl{grid-column:3;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
-.project-image-grid-6 .g6-br{grid-column:2;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
-.project-image-grid-6 .g6-bl{grid-column:3;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px}
-.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img{width:100%;height:100%;object-fit:cover;display:block;transition:all .5s ease;filter:grayscale(100%)}
-.project-image-grid .grid-item img:hover,.project-image-grid-3mix .grid-item img:hover,.project-image-grid-5 .grid-item img:hover,.project-image-grid-6 .grid-item img:hover{filter:grayscale(0%)}
-.project-image-grid .grid-item img.color-click,.project-image-grid-3mix .grid-item img.color-click,.project-image-grid-5 .grid-item img.color-click,.project-image-grid-6 .grid-item img.color-click{filter:grayscale(0%)}
-.project-card:hover .project-image-grid .grid-item img,.project-card:hover .project-image-grid-3mix .grid-item img,.project-card:hover .project-image-grid-5 .grid-item img,.project-card:hover .project-image-grid-6 .grid-item img{transform:scale(1.05)}
-.project-card:hover .project-image-grid .grid-item img.color-click,.project-card:hover .project-image-grid-3mix .grid-item img.color-click,.project-card:hover .project-image-grid-5 .grid-item img.color-click,.project-card:hover .project-image-grid-6 .grid-item img.color-click{transform:scale(1.05)}
+.project-image-grid-6 .g6-hero{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:180px;aspect-ratio:16/9}
+.project-image-grid-6 .g6-left{grid-row:2/4;overflow:hidden;position:relative;border-radius:4px;min-height:260px;aspect-ratio:3/4}
+.project-image-grid-6 .g6-tr{grid-column:2;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px;aspect-ratio:4/3}
+.project-image-grid-6 .g6-tl{grid-column:3;grid-row:2;overflow:hidden;position:relative;border-radius:4px;min-height:125px;aspect-ratio:4/3}
+.project-image-grid-6 .g6-br{grid-column:2;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px;aspect-ratio:4/3}
+.project-image-grid-6 .g6-bl{grid-column:3;grid-row:3;overflow:hidden;position:relative;border-radius:4px;min-height:125px;aspect-ratio:4/3}
+.project-image-grid-8{display:grid;width:100%;gap:6px;grid-template-columns:1fr 1fr 1fr;position:relative}
+.project-image-grid-8 .g8-wide{grid-column:1/-1;overflow:hidden;position:relative;border-radius:4px;min-height:200px}
+.project-image-grid-8 .g8-item{overflow:hidden;position:relative;border-radius:4px;min-height:120px}
+/* ===== PROJECT TEXT ===== */
+.project-card{padding-bottom:20px}
+.project-category{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(153,153,153,.75);margin-top:12px;margin-bottom:2px;font-weight:500}
+.project-category-cn{font-family:'Noto Serif SC',serif;font-size:10px;color:rgba(187,187,187,.75);margin-bottom:6px}
+.project-title-cn{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;color:rgba(17,17,17,.75);margin-bottom:2px;line-height:1.3}
+.project-title-en{font-size:12px;color:rgba(153,153,153,.75);font-weight:400;margin-bottom:8px}
+.project-desc-cn{font-family:'Noto Serif SC',serif;font-size:13px;color:rgba(102,102,102,.75);margin-bottom:2px}
+.project-desc{font-size:11px;color:rgba(153,153,153,.75);letter-spacing:.5px}
+.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img,.project-image-grid-8 img{width:100%;height:100%;object-fit:cover;display:block;transition:all .5s ease;filter:grayscale(100%)}
+.project-image-grid .grid-item img:hover,.project-image-grid-3mix .grid-item img:hover,.project-image-grid-5 .grid-item img:hover,.project-image-grid-6 .grid-item img,.project-image-grid-8 img:hover{filter:grayscale(0%)}
+.project-image-grid .grid-item img.color-click,.project-image-grid-3mix .grid-item img.color-click,.project-image-grid-5 .grid-item img.color-click,.project-image-grid-6 .grid-item img,.project-image-grid-8 img.color-click{filter:grayscale(0%)}
+.project-card:hover .project-image-grid .grid-item img,.project-card:hover .project-image-grid-3mix .grid-item img,.project-card:hover .project-image-grid-5 .grid-item img,.project-card:hover .project-image-grid-6 .grid-item img,.project-image-grid-8 img{transform:scale(1.05)}
+.project-card:hover .project-image-grid .grid-item img.color-click,.project-card:hover .project-image-grid-3mix .grid-item img.color-click,.project-card:hover .project-image-grid-5 .grid-item img.color-click,.project-card:hover .project-image-grid-6 .grid-item img,.project-image-grid-8 img.color-click{transform:scale(1.05)}
 
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:60px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
 
+
+
+/* ===== FORM TOAST ===== */
+.form-toast{position:absolute;bottom:0;left:0;right:0;background:rgba(17,17,17,.45);color:#fff;padding:18px 24px;border-radius:0 0 4px 4px;font-size:14px;font-weight:500;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:10;text-align:center;backdrop-filter:blur(4px)}
+.form-toast.show{opacity:1}
+.form-toast .toast-cn{font-family:'Noto Serif SC',serif;margin-right:8px;color:#eee}
+.form-toast .toast-en{color:rgba(255,255,255,.6);font-size:12px}
+.contact-form{position:relative}
 
 /* ===== CONTACT ===== */
 .contact-section{padding:140px 0;background:#111;color:#eee}
@@ -125,9 +144,11 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
 .projects-grid{grid-template-columns:1fr;gap:32px}
 .project-image{height:auto;overflow:visible}
-.project-image-grid,.project-image-grid-3mix,.project-image-grid-5,.project-image-grid-6{display:flex;flex-direction:column;gap:8px;width:100%}
-.project-image-grid .grid-hero,.project-image-grid .grid-small,.project-image-grid-3mix .mix-left,.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom,.project-image-grid-5 .grid-hero-5,.project-image-grid-5 .grid-half,.project-image-grid-6 .g6-hero,.project-image-grid-6 .g6-left,.project-image-grid-6 .g6-tr,.project-image-grid-6 .g6-tl,.project-image-grid-6 .g6-br,.project-image-grid-6 .g6-bl{width:100%;min-height:180px}
-.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img{height:100%;width:100%;object-fit:cover}
+.project-image-grid,.project-image-grid-3mix,.project-image-grid-5,.project-image-grid-6,.project-image-grid-8{display:flex;flex-direction:column;gap:8px;width:100%}
+.project-image-grid,.project-image-grid-3mix,.project-image-grid-5,.project-image-grid-6,.project-image-grid-8{display:flex;flex-direction:column;gap:8px;width:100%}
+.project-image-grid .grid-hero,.project-image-grid-3mix .mix-left,.project-image-grid-5 .grid-hero-5,.project-image-grid-6 .g6-hero,.project-image-grid-6 .g6-left{width:100%;aspect-ratio:16/9;min-height:200px}
+.project-image-grid .grid-small,.project-image-grid-3mix .mix-right-top,.project-image-grid-3mix .mix-right-bottom,.project-image-grid-5 .grid-half,.project-image-grid-6 .g6-tr,.project-image-grid-6 .g6-tl,.project-image-grid-6 .g6-br,.project-image-grid-6 .g6-bl{width:100%;aspect-ratio:16/10;min-height:160px}.project-image-grid-8 .g8-wide,.project-image-grid-8 .g8-item{width:100%}
+.project-image-grid .grid-item img,.project-image-grid-3mix .grid-item img,.project-image-grid-5 .grid-item img,.project-image-grid-6 .grid-item img,.project-image-grid-8 img{height:100%;width:100%;object-fit:cover}
 .hero-inner{flex-direction:column;align-items:center;text-align:center}
 .hero-avatar{width:120px;height:120px}
 .container{padding:0 20px}
@@ -340,6 +361,53 @@ a{text-decoration:none;color:inherit}
         <p class="project-desc-cn">江苏 · 800㎡</p>
         <p class="project-desc">2023</p>
       </div>
+      <div class="project-card reveal">
+        <div class="project-image">
+          <div class="project-image-grid">
+            <div class="grid-item grid-hero">
+              <img src="images/hetao-1.jpg.jpg" alt="鹤涛小学 - 主图" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/hetao-2.jpg.jpg" alt="鹤涛小学 - 2" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/hetao-3.jpg.jpg" alt="鹤涛小学 - 3" loading="lazy">
+            </div>
+            <div class="grid-item grid-small">
+              <img src="images/hetao-4.jpg.jpg" alt="鹤涛小学 - 4" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <p class="project-category">Educational Architecture</p>
+        <p class="project-category-cn">教育建筑</p>
+        <h3 class="project-title-cn">鹤涛小学</h3>
+        <p class="project-title-en">Hetao Primary School Renovation</p>
+        <p class="project-desc-cn">江苏 南通 · 5000m²</p>
+        <p class="project-desc">2023</p>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-image">
+          <div class="project-image-grid-8">
+            <div class="g8-wide" style="aspect-ratio:2835/797"><img src="images/aesthetic-2.jpg.jpg" alt="私人形象美学 - 主图" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:1701/703"><img src="images/aesthetic-3.jpg.jpg" alt="私人形象美学 - 3" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:992/522"><img src="images/aesthetic-6.jpg.jpg" alt="私人形象美学 - 6" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:1276/723"><img src="images/aesthetic-5.jpg.jpg" alt="私人形象美学 - 5" loading="lazy"></div>
+            <div class="g8-wide" style="aspect-ratio:1701/561"><img src="images/aesthetic-1.jpg.jpg" alt="私人形象美学 - 2" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:1701/969"><img src="images/aesthetic-7.jpg.jpg" alt="私人形象美学 - 7" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:1417/797"><img src="images/aesthetic-8.jpg.jpg" alt="私人形象美学 - 8" loading="lazy"></div>
+            <div class="g8-item" style="aspect-ratio:1276/1226"><img src="images/aesthetic-4.jpg.jpg" alt="私人形象美学 - 4" loading="lazy"></div>
+          </div>
+        </div>
+        <p class="project-category">Lifestyle & Club</p>
+        <p class="project-category-cn">生活美学</p>
+        <h3 class="project-title-cn">形象美学（会所）</h3>
+        <p class="project-title-en">Image Aesthetics Club</p>
+        <p class="project-desc-cn">江苏 南通 · 600m²</p>
+        <p class="project-desc">2025</p>
+      </div>
+
+
+
 
     </div>
   </div>
@@ -382,6 +450,20 @@ a{text-decoration:none;color:inherit}
         <p class="service-title-en">Design Development & Construction Management</p>
         <p class="service-text-cn">从深化设计到施工现场管理，把控每个环节，确保设计理念精准落地，实现空间的完整交付。</p>
         <p class="service-text-en">From design development to construction management — controlling every detail to ensure each vision is precisely executed for complete spatial delivery.</p>
+      </div>
+      <div class="service-item reveal">
+        <p class="service-number">05</p>
+        <h3 class="service-title-cn">AI设计</h3>
+        <p class="service-title-en">AI Design</p>
+        <p class="service-text-cn">AI辅助空间概念生成、方案深化与可视化呈现，以智能驱动提升设计效率与创意边界。</p>
+        <p class="service-text-en">AI-assisted concept generation, design development, and visualization — intelligently elevating design efficiency and creative boundaries.</p>
+      </div>
+      <div class="service-item reveal">
+        <p class="service-number">06</p>
+        <h3 class="service-title-cn">艺术品咨询及代购</h3>
+        <p class="service-title-en">Art Consulting & Sourcing</p>
+        <p class="service-text-cn">提供艺术品选配、定制咨询及代购服务，为空间注入独特的艺术气息与收藏价值。</p>
+        <p class="service-text-en">Providing art selection, custom consultation, and sourcing services to infuse spaces with a distinctive artistic atmosphere and collected value.</p>
       </div>
     </div>
   </div>
@@ -428,7 +510,8 @@ a{text-decoration:none;color:inherit}
           <p class="contact-item-value-en">Open for commissions & AI design consulting</p>
         </div>
       </div>
-      <form class="contact-form reveal" action="https://formsubmit.co/13914370995@139.com" method="POST" onsubmit="var btn=this.querySelector(&#39;.form-btn span&#39;);btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送中...</span>Sending...&#39;;setTimeout(function(){btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送消息</span>Send message&#39;},8000)">
+      <iframe name="form-iframe" style="display:none"></iframe>
+      <form class="contact-form reveal" action="https://formsubmit.co/13914370995@139.com" method="POST" target="form-iframe" onsubmit="var f=this;var btn=f.querySelector(&#39;.form-btn span&#39;);btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送中...</span>Sending...&#39;;setTimeout(function(){btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>✓ 已发送</span>Sent&#39;;f.reset();var t=document.getElementById(&#39;form-toast&#39;);if(t){t.classList.add(&#39;show&#39;);setTimeout(function(){t.classList.remove(&#39;show&#39;)},4000);setTimeout(function(){btn.innerHTML=&#39;<span class=&#39;form-btn-cn&#39;>发送消息</span>Send message&#39;},4000)}},2000)">
         <div class="form-row">
           <input class="form-input" type="text" name="name" placeholder="您的姓名 / Your name" required>
           <input class="form-input" type="email" name="email" placeholder="邮箱 / Email" required>
@@ -436,11 +519,16 @@ a{text-decoration:none;color:inherit}
         <input class="form-input" type="text" name="project" placeholder="项目类型 / Project type">
         <textarea class="form-input textarea" name="message" placeholder="简单描述您的需求 / Tell me about your project..." rows="4"></textarea>
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="【作品集咨询】来自周荣志网站访客">
+        <input type="hidden" name="_template" value="box">
         <button class="form-btn" type="submit">
           <span><span class="form-btn-cn">发送消息</span>Send message</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h10M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
         </button>
+      <div class="form-toast" id="form-toast">
+        <span class="toast-cn">✓ 发送成功！</span>
+        <span class="toast-en">Message sent successfully</span>
+      </div>
       </form>
     </div>
   </div>
@@ -496,7 +584,7 @@ document.querySelectorAll('.nav a').forEach(link => {
 
 
 <script>
-document.querySelectorAll('.project-image-grid .grid-item img, .project-image-grid-3mix .grid-item img, .project-image-grid-5 .grid-item img, .project-image-grid-6 .grid-item img').forEach(img => {
+document.querySelectorAll('.project-image-grid .grid-item img, .project-image-grid-3mix .grid-item img, .project-image-grid-5 .grid-item img, .project-image-grid-6 .grid-item img,.project-image-grid-8 img').forEach(img => {
   img.addEventListener('click', function(e) {
     e.stopPropagation();
     this.classList.toggle('color-click');
